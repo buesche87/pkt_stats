@@ -1,7 +1,8 @@
 # pkt_stats
 
 First change settings in pkt_stats.conf
-Then run the pkts_installer with parameters as follow:
+
+Then run the pkts_installer.sh with following parameters:
 
 - s: installs the pkt_stats script
 - m: installs packetcrypt_rs miner
