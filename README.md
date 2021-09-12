@@ -1,5 +1,7 @@
 # pkt_stats
 
+Install this script on your pkt miners, have a influxdb server with grafana ready for nice visualizations
+
 First change settings in pkt_stats.conf
 
 Then run the pkts_installer.sh with following parameters:
