@@ -1,0 +1,11 @@
+[Unit]
+Description=PKT Wallet balance
+After=network.target
+
+[Service]
+User=[USER]
+ExecStart=/bin/bash [TARGET]/pkt_balance.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

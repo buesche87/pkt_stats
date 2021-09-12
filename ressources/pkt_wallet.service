@@ -1,0 +1,11 @@
+[Unit]
+Description=PKT Wallet
+After=network.target
+
+[Service]
+User=[USER]
+ExecStart=[TARGET]/pktd/bin/pktwallet
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

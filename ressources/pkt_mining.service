@@ -1,0 +1,11 @@
+[Unit]
+Description=PKT Miner
+After=network.target
+
+[Service]
+User=[USER]
+ExecStart=/bin/bash [TARGET]/pkt_mining.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
