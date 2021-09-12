@@ -10,3 +10,5 @@ Then run the pkts_installer with parameters as follow:
 - c: installs a service that monitors your pkt-services 
 - f: installs a script to easily fold your coins
 
+![image](https://user-images.githubusercontent.com/11134705/132981374-de559ac9-3349-4f19-909c-835750447307.png)
+
