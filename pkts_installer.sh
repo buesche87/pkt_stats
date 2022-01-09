@@ -81,7 +81,7 @@ install_wallet () {
   cd -
 
   echo "%$pkt_user ALL=NOPASSWD: /bin/systemctl status pkt_wallet" > /etc/sudoers.d/pkt_stats
-  echo "%$pkt_user ALL=NOPASSWD: /bin/systemctl is-active pkt_wallet" >> /etc/sudoers/pkt_stats
+  echo "%$pkt_user ALL=NOPASSWD: /bin/systemctl is-active pkt_wallet" >> /etc/sudoers.d/pkt_stats
 
   create_service pkt_wallet
 

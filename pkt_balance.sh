@@ -4,34 +4,39 @@
 #/////////////////////////////////////////////////////////////////////////////////////
 
 # load settings
-. [TARGET]/pkt_stats.conf
+. /home/pkt/pkt_stats.conf
 
 last_balance="$($installdir/pktd/bin/pktctl --wallet getbalance)"
 
 # service mode
 while sleep 120; do
-
+	
+	walletstat="$(sudo systemctl is-active pkt_wallet)"
 	curr_balance="$($installdir/pktd/bin/pktctl --wallet getbalance)"
+	delta="$(echo "$curr_balance != $last_balance" | bc -l)"
 
 	curl -i -XPOST 'http://'$Server':8086/write?db='$Database --data-binary $Topic' '$balance_sensor'='$curr_balance
-
-	echo "Curr: $curr_balance / Last: $last_balance"
-
+	
+	echo "Last Balance: $last_balance"
+	echo "Current Balance: $curr_balance"
+	echo ""
+	
 	# check if wallet service running
-	if (sudo systemctl is-active pkt_wallet) && (( $(echo "$curr_balance != $last_balance" | bc -l))); then
+	if [[ "$walletstat" == "active"  ]] && [[ "$delta" == "1" ]]; then
 
 		curl -i -XPOST 'http://'$Server':8086/write?db='$Database --data-binary $Topic' '$wallet_sensor'=1'
 		last_balance="$curr_balance"
 
 	# wallet not running
-	elif (! sudo systemctl is-active pkt_wallet); then
+	
+	elif [[ ! "$walletstat" == "active" ]]; then
 
 		curl -i -XPOST 'http://'$Server':8086/write?db='$Database --data-binary $Topic' '$wallet_sensor'=0'  
 
 	# balance not changed
-	elif (( $(echo "$curr_balance == $last_balance" | bc -l) )); then
+	elif [[ "$delta" == "0" ]]; then
 
-		curl -i -XPOST 'http://'$Server':8086/write?db='$Database --data-binary $Topic' '$wallet_sensor'=-1'
+		curl -i -XPOST 'http://'$Server':8086/write?db='$Database --data-binary $Topic' '$wallet_sensor'=2'
 
 	fi
 

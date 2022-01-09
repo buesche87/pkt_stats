@@ -4,17 +4,20 @@
 #/////////////////////////////////////////////////////////////////////////////////////
 
 # load settings
-. [TARGET]/pkt_stats.conf
+. /home/pkt/pkt_stats.conf
 
 # service mode
 while sleep 300; do
-  
+	
+	miningstat="$(sudo systemctl is-active pkt_wallet)"
+	
+	
 	# check mining
-	if (systemctl is-active --quiet pkt_mining); then
+	if [[ "$miningstat" == "active"  ]] ; then
 	
 		curl -i -XPOST 'http://'$Server':8086/write?db='$Database --data-binary $Topic' '$mining_sensor'=1'
 	
-	elif (! systemctl is-active --quiet pkt_mining); then
+	elif [[ ! "$miningstat" == "active"  ]] ; then
 	
 		curl -i -XPOST 'http://'$Server':8086/write?db='$Database --data-binary $Topic' '$mining_sensor'=0'
 	
