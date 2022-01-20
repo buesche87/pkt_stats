@@ -3,7 +3,6 @@ Description=PKT Stats
 After=network.target
 
 [Service]
-User=[USER]
 ExecStart=/bin/bash [TARGET]/pkt_stats.sh
 Restart=always
 

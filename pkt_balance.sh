@@ -6,10 +6,11 @@
 # load settings
 . /home/pkt/pkt_stats.conf
 
-last_balance="$($installdir/pktd/bin/pktctl --wallet getbalance)"
-
 # service mode
-while sleep 120; do
+while sleep 1; do
+	
+	last_balance="$($installdir/pktd/bin/pktctl --wallet getbalance)"
+	sleep 300
 	
 	walletstat="$(sudo systemctl is-active pkt_wallet)"
 	curr_balance="$($installdir/pktd/bin/pktctl --wallet getbalance)"

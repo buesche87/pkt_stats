@@ -7,9 +7,10 @@
 . /home/pkt/pkt_stats.conf
 
 # service mode
-while sleep 1; do
+while sleep 300; do
 	
-	miningstat="$(sudo systemctl is-active pkt_mining)"
+	miningstat="$(sudo systemctl is-active pkt_wallet)"
+	
 	
 	# check mining
 	if [[ "$miningstat" == "active"  ]] ; then
@@ -43,7 +44,5 @@ while sleep 1; do
 		curl -i -XPOST 'http://'$Server':8086/write?db='$Database --data-binary $Topic' '$stats_sensor'=0'
 	
 	fi
-	
-	sleep 300
  
 done

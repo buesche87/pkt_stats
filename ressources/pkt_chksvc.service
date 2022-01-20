@@ -3,7 +3,6 @@ Description=PKT Check services
 After=network.target
 
 [Service]
-User=[USER]
 ExecStart=/bin/bash [TARGET]/pkt_chksvc.sh
 Restart=always
 
