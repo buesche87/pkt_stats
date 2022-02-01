@@ -8,7 +8,7 @@
 
 # get current mining pools
 systemd_line="$(systemctl status pkt_mining | grep 'packetcrypt ann') "
-systemd_str="$(echo "$systemd_line" | grep -oP '(?<=http://).*?(?= )' )"
+systemd_str="$(echo "$systemd_line" | grep -Eo 'https?://\S+?' | cut -d/ -f3)"
 systemd_array=( $systemd_str )
 
 # service mode
