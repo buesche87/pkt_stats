@@ -3,8 +3,8 @@ Description=PKT Wallet balance
 After=network.target
 
 [Service]
-User=[USER]
-ExecStart=/bin/bash [TARGET]/pkt_balance.sh
+User=PKTUSER
+ExecStart=/bin/bash TARGETPATH/pkt_balance.sh
 Restart=always
 
 [Install]

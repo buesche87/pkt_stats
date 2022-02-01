@@ -3,8 +3,8 @@ Description=PKT Miner
 After=network.target
 
 [Service]
-User=[USER]
-ExecStart=/bin/bash [TARGET]/pkt_mining.sh
+User=PKTUSER
+ExecStart=/bin/bash TARGETPATH/pkt_mining.sh
 Restart=always
 
 [Install]

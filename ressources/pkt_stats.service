@@ -3,7 +3,7 @@ Description=PKT Stats
 After=network.target
 
 [Service]
-ExecStart=/bin/bash [TARGET]/pkt_stats.sh
+ExecStart=/bin/bash TARGETPATH/pkt_stats.sh
 Restart=always
 
 [Install]

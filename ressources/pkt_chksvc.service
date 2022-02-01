@@ -3,7 +3,7 @@ Description=PKT Check services
 After=network.target
 
 [Service]
-ExecStart=/bin/bash [TARGET]/pkt_chksvc.sh
+ExecStart=/bin/bash TARGETPATH/pkt_chksvc.sh
 Restart=always
 
 [Install]

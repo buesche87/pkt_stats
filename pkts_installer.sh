@@ -35,7 +35,7 @@ done
 create_script () {
   
   cp ./$1.sh /$installdir/$1.sh
-  sed -i "s/[TARGET]/$installdir/" /$installdir/$1.sh
+  sed -i "s/TARGETPATH/$installdir/" /$installdir/$1.sh
   chmod +x /$installdir/$1.sh
 
 }
@@ -43,8 +43,8 @@ create_script () {
 # create service
 create_service () {
   
-  sed -i "s/[TARGET]/$installdir/" ./ressources/$1.service
-  sed -i "s/[USER]/$pkt_user/" ./ressources/$1.service
+  sed -i "s/TARGETPATH/$installdir/" ./ressources/$1.service
+  sed -i "s/PKTUSER/$pkt_user/" ./ressources/$1.service
   cp ./ressources/$1.service /etc/systemd/system/$1.service
 
   # enable & start services
