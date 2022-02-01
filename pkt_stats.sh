@@ -25,15 +25,15 @@ journalctl -u pkt_mining.service -f |
 			bw_value="${bandwith//[!0-9.]/}"
 			
 			# post to influxdb
-			curl -i -XPOST 'http://'$Server':8086/write?db='$Database --data-binary $Topic' '$enc_sensor'='$enc_value
-			curl -i -XPOST 'http://'$Server':8086/write?db='$Database --data-binary $Topic' '$bw_sensor'='$bw_value
+			curl -i -XPOST $Server'/write?db='$Database --data-binary $Topic' '$enc_sensor'='$enc_value
+			curl -i -XPOST $Server'/write?db='$Database --data-binary $Topic' '$bw_sensor'='$bw_value
 
 			# API v2 with authentication
-			# curl -i -XPOST 'http://'$Server':8086/api/v2/write?bucket='$Database'/rp&precision=ns' \
+			# curl -i -XPOST $Server'/api/v2/write?bucket='$Database'/rp&precision=ns' \
 			#  --header 'Authorization: Token '$Username':'$Password' \	
 			#  --data-raw $Topic','$enc_sensor'='$enc_value'
 
-			# curl -i -XPOST 'http://'$Server':8086/api/v2/write?bucket='$Database'/rp&precision=ns' \
+			# curl -i -XPOST $Server'/api/v2/write?bucket='$Database'/rp&precision=ns' \
 			#  --header 'Authorization: Token '$Username':'$Password' \	
 			#  --data-raw $Topic','$bw_sensor'='$bw_value'
 	
@@ -49,9 +49,9 @@ journalctl -u pkt_mining.service -f |
 				pool="${systemd_array[i]}"
 				gr_value=$element
 				
-				curl -i -XPOST 'http://'$Server':8086/write?db='$Database --data-binary $Topic',Pool='$pool' '$gr_sensor'='$gr_value
+				curl -i -XPOST $Server'/write?db='$Database --data-binary $Topic',Pool='$pool' '$gr_sensor'='$gr_value
 
-				# curl -i -XPOST 'http://'$Server':8086/api/v2/write?bucket='$Database'/rp&precision=ns' \
+				# curl -i -XPOST $Server'/api/v2/write?bucket='$Database'/rp&precision=ns' \
 				#  --header 'Authorization: Token '$Username':'$Password' \	
 				#  --data-raw $Topic','$bw_sensor'='$bw_value'
 				

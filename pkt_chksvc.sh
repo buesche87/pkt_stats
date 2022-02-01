@@ -14,11 +14,11 @@ while sleep 1; do
 	# check mining
 	if [[ "$miningstat" == "active"  ]] ; then
 	
-		curl -i -XPOST 'http://'$Server':8086/write?db='$Database --data-binary $Topic' '$mining_sensor'=1'
+		curl -i -XPOST $Server'/write?db='$Database --data-binary $Topic' '$mining_sensor'=1'
 	
 	elif [[ ! "$miningstat" == "active"  ]] ; then
 	
-		curl -i -XPOST 'http://'$Server':8086/write?db='$Database --data-binary $Topic' '$mining_sensor'=0'
+		curl -i -XPOST $Server'/write?db='$Database --data-binary $Topic' '$mining_sensor'=0'
 	
 	fi
 
@@ -30,17 +30,17 @@ while sleep 1; do
 	# check if stats running
 	if (systemctl is-active --quiet pkt_stats) && [ $svc_mining_epoch -le $svc_stats_epoch ]; then
 
-		curl -i -XPOST 'http://'$Server':8086/write?db='$Database --data-binary $Topic' '$stats_sensor'=1'
+		curl -i -XPOST $Server'/write?db='$Database --data-binary $Topic' '$stats_sensor'=1'
 
 	# check if mining started before stats
 	elif [ $svc_mining_epoch -gt $svc_stats_epoch ]; then
 	
-		curl -i -XPOST 'http://'$Server':8086/write?db='$Database --data-binary $Topic' '$stats_sensor'=-1'
+		curl -i -XPOST $Server'/write?db='$Database --data-binary $Topic' '$stats_sensor'=-1'
 
 	# stats not running
 	elif (! systemctl is-active --quiet pkt_stats); then
   
-		curl -i -XPOST 'http://'$Server':8086/write?db='$Database --data-binary $Topic' '$stats_sensor'=0'
+		curl -i -XPOST $Server'/write?db='$Database --data-binary $Topic' '$stats_sensor'=0'
 	
 	fi
 	
