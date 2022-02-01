@@ -4,7 +4,7 @@
 #/////////////////////////////////////////////////////////////////////////////////////
 
 # load settings
-. /home/pkt/pkt_stats.conf
+. [TARGET]/pkt_stats.conf
 
 # service mode
 while sleep 1; do
