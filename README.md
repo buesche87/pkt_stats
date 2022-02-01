@@ -4,7 +4,7 @@ Install this script on your pkt miners, have a influxdb server with grafana read
 
 First change settings in pkt_stats.conf
 
-Then run the pkts_installer.sh with following parameters:
+Then run the pkts_installer.sh with following parameters: (don't use the installer - it's broken)
 
 - s: installs the pkt_stats script
 - m: installs packetcrypt_rs miner
