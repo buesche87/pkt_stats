@@ -13,5 +13,8 @@ Then run the pkts_installer.sh with following parameters: (don't use the install
 - c: installs a service that monitors your pkt-services 
 - f: installs a script to easily fold your coins
 
-![image](https://user-images.githubusercontent.com/11134705/132981374-de559ac9-3349-4f19-909c-835750447307.png)
+![pkt_stats](https://user-images.githubusercontent.com/11134705/152444501-d0a2280e-8f9f-48c7-9617-841ebb62ef2f.jpg)
 
+Note: You'll need to build your own Grafana Dashboard
+
+If you'd like to buy me a coffe: pkt1qk7ee80trnvpz8ekzu2mech3g0skw9p2k9w4t0s
