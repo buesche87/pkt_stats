@@ -17,4 +17,4 @@ Then run the pkts_installer.sh with following parameters: (don't use the install
 
 Note: You'll need to build your own Grafana Dashboard
 
-If you'd like to buy me a coffe: pkt1qk7ee80trnvpz8ekzu2mech3g0skw9p2k9w4t0s
+If you'd like to buy me a coffe: ```pkt1qk7ee80trnvpz8ekzu2mech3g0skw9p2k9w4t0s```
