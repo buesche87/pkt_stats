@@ -1,6 +1,6 @@
 # pkt_stats
 
-Install this script on your pkt miners, have a influxdb server with grafana ready for nice visualizations
+Install this script on your pkt miners, have an influxdb server with grafana ready for nice visualizations
 
 First change settings in pkt_stats.conf
 
