@@ -2,7 +2,10 @@
 
 Install this script on your pkt miners, have an influxdb server with grafana ready for nice visualizations
 
-First change settings in pkt_stats.conf
+- First change settings in pkt_stats.conf
+- Create services from resource folder
+
+- you will need at least pkt_mining, pkt_stats and pkt_chksvc for all visualizations
 
 Then run the pkts_installer.sh with following parameters: (don't use the installer - it's broken)
 
