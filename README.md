@@ -23,6 +23,6 @@ best to use a reverse proxy for influxdb POST.
 
 ![pkt_stats](https://user-images.githubusercontent.com/11134705/152444501-d0a2280e-8f9f-48c7-9617-841ebb62ef2f.jpg)
 
-Note: You'll need to build your own Grafana dashboard or contact me @ https://t.me/pkt_cash for a template
+Note: You'll need to build your own grafana dashboard or contact me @ https://t.me/pkt_cash for a template
 
-If you'd like to support me hodl ;) ```pkt1qczhxgwcf6x7qccnmgvy88xfq6shqfx888ggdcl```
+if you'd like to support me hodl ;) ```pkt1qczhxgwcf6x7qccnmgvy88xfq6shqfx888ggdcl```
