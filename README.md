@@ -1,23 +1,28 @@
 # pkt_stats
 
-Install this script on your pkt miners, have an influxdb server with grafana ready for nice visualizations
+Copy this script on your pkt miners, have an influxdb server ready, visualize ond grafana.
+Best to use a reverse proxy for influxdb POST.
 
-- First change settings in pkt_stats.conf
-- Create services from resource folder
-
-- you will need at least pkt_mining, pkt_stats and pkt_chksvc for all visualizations
-
-Then run the pkts_installer.sh with following parameters: (don't use the installer - it's broken)
-
-- s: installs the pkt_stats script
-- m: installs packetcrypt_rs miner
-- w: installs the pkt cli wallet
-- b: installs a service that gets the balance out of your wallet and puts it into influxdb
-- c: installs a service that monitors your pkt-services 
-- f: installs a script to easily fold your coins
+- change settings in pkt_stats.conf
+- copy the cripts you need
+  - pkt_mining.sh: starts packetcrypt_rs with defined parameters in pkt_stats.conf
+  - pkt_stats.sh: monitors output of pkt_mining systemd service
+  - pkt_chksvc.sh: checks if pkt-services are up
+  - pkt_balance.sh: gets balance if pkt-wallet is started as service
+  - pkt_fold.sh: folds your coins once -> prameter needs to be wallet password in clear text, stay safe!
+  - pkt_cron.sh: restarts pkt-services
+- change variables in scripts
+  - TARGETPATH: installation-dir
+- copy needed systemd service-files to ```/etc/systemd/system```
+- change variables in service-files
+  - PKTUSER: linux user
+  - TARGETPATH: installation-dir
+- start services
+  - systemctl enable pkt_*
+  - systemctl start pkt_* 
 
 ![pkt_stats](https://user-images.githubusercontent.com/11134705/152444501-d0a2280e-8f9f-48c7-9617-841ebb62ef2f.jpg)
 
-Note: You'll need to build your own Grafana Dashboard
+Note: You'll need to build your own Grafana dashboard or contact me @ https://t.me/pkt_cash for a template
 
 If you'd like to buy me a coffe: ```pkt1qczhxgwcf6x7qccnmgvy88xfq6shqfx888ggdcl```
