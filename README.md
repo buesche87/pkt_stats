@@ -3,9 +3,9 @@
 copy this script on your pkt miners, have an influxdb server ready, visualize in grafana.
 best to use a reverse proxy for influxdb POST.
 
-- change settings in pkt_stats.conf
+- change settings in ```pkt_stats.conf```
 - copy the cripts you need
-  - ```pkt_mining.sh``` - starts packetcrypt_rs with defined parameters in pkt_stats.conf
+  - ```pkt_mining.sh``` - starts packetcrypt_rs with defined parameters in ```pkt_stats.conf```
   - ```pkt_stats.sh``` - monitors output of pkt_mining systemd service
   - ```pkt_chksvc.sh``` - checks if pkt-services are up
   - ```pkt_balance.sh``` - gets balance if pkt-wallet is started as service
