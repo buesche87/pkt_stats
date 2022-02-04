@@ -25,4 +25,4 @@ Best to use a reverse proxy for influxdb POST.
 
 Note: You'll need to build your own Grafana dashboard or contact me @ https://t.me/pkt_cash for a template
 
-If you'd like to buy me a coffe: ```pkt1qczhxgwcf6x7qccnmgvy88xfq6shqfx888ggdcl```
+If you'd like to support me hodl ;) ```pkt1qczhxgwcf6x7qccnmgvy88xfq6shqfx888ggdcl```
