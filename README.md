@@ -1,6 +1,6 @@
 # pkt_stats
 
-copy this script on your pkt miners, have an influxdb server ready, visualize ond grafana.
+copy this script on your pkt miners, have an influxdb server ready, visualize in grafana.
 best to use a reverse proxy for influxdb POST.
 
 - change settings in pkt_stats.conf
