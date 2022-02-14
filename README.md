@@ -1,7 +1,9 @@
 # pkt_stats
 
-copy this script on your pkt miners, have an influxdb server ready, visualize in grafana.
-best to use a reverse proxy for influxdb POST.
+copy these scripts to your pkt miners, have an influxdb server ready, visualize you rmining data with grafana.
+For security use a reverse proxy to POST data into influxdb and access grafana from wan.
+
+---
 
 - change settings in ```pkt_stats.conf```
 - copy the cripts you need
@@ -21,10 +23,12 @@ best to use a reverse proxy for influxdb POST.
   - ```systemctl enable pkt_*```
   - ```systemctl start pkt_*```
 
+---
+
 ![pkt_stats](https://user-images.githubusercontent.com/11134705/152444501-d0a2280e-8f9f-48c7-9617-841ebb62ef2f.jpg)
 
 Note: You'll need to build your own grafana dashboard or contact me @ https://t.me/pkt_cash for a template
 
-
+---
 
 If you find this usefull you can support me @ ```pkt1qczhxgwcf6x7qccnmgvy88xfq6shqfx888ggdcl```
