@@ -4,7 +4,8 @@
 #/////////////////////////////////////////////////////////////////////////////////////
 
 # load settings
-. TARGETPATH/pkt_stats.conf
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+. SCRIPT_DIR/pkt_stats.conf
 
 # get current mining pools
 systemd_line="$(systemctl status pkt_mining | grep 'packetcrypt ann') "
