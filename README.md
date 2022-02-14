@@ -6,7 +6,7 @@ For security use a reverse proxy to POST data into influxdb and access grafana f
 ---
 
 - Change settings in ```pkt_stats.conf```
-- Copy the cripts you need
+- Copy the scripts you need
   - ```pkt_mining.sh``` - starts packetcrypt_rs with defined parameters in ```pkt_stats.conf```
   - ```pkt_stats.sh``` - monitors output of pkt_mining systemd service
   - ```pkt_chksvc.sh``` - checks if pkt-services are up
