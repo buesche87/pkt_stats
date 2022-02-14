@@ -1,0 +1,11 @@
+[Unit]
+Description=PKTM Wallet
+After=network.target
+
+[Service]
+User=pkt
+ExecStart=TARGETPATH/pktd/bin/pktwallet
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
