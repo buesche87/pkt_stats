@@ -1,6 +1,6 @@
 # pkt_stats
 
-Copy these scripts to your pkt miners, have an influxdb server ready, visualize you rmining data with grafana.
+Copy these scripts to your pkt miners, have an influxdb server ready, visualize your mining data with grafana.
 For security use a reverse proxy to POST data into influxdb and access grafana from wan.
 
 ---
