@@ -13,12 +13,10 @@ For security use a reverse proxy to POST data into influxdb and access grafana f
   - ```pkt_balance.sh``` - gets balance if pkt-wallet is started as service
   - ```pkt_fold.sh``` - folds your coins once -> prameter needs to be wallet password in clear text, stay safe!
   - ```pkt_cron.sh``` - restarts pkt-services
-- Change variables in scripts
-  - ```TARGETPATH``` - installation-dir
 - Copy needed systemd service-files to ```/etc/systemd/system```
 - Change variables in service-files
-  - ```PKTUSER``` - linux user
-  - ```TARGETPATH``` - installation-dir
+  - ```PKTUSER``` - linux user running the scripts
+  - ```TARGETPATH``` - installation dir
 - Start services
   - ```systemctl enable pkt_*```
   - ```systemctl start pkt_*```
